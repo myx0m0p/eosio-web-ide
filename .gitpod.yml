@@ -1,4 +1,4 @@
-image: eosio/eosio-web-ide:v0.1.0
+image: eosio/eosio-web-ide:v0.1.1
 
 ports:
 - port: 3000
@@ -16,5 +16,5 @@ tasks:
 - before: cd webapp
   init: yarn
   command: nginx -c $PWD/nginx.conf; npx webpack-dev-server
-- before: cleos wallet unlock --password </password
+- before: cleos wallet unlock --password </password>
   command: nodeos --config-dir ~/eosio/chain/config --data-dir ~/eosio/chain/data -e -p eosio --plugin eosio::chain_api_plugin --contracts-console
